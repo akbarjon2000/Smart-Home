@@ -9,6 +9,11 @@ import { format } from "date-fns";
 import Footer from "./Footer";
 import weather from "../images/weather.JPG";
 import Banner from "./Banner";
+import BuzzerSensor from "./BuzzerSensor";
+import TempretureSensor from "./TempretureSensor";
+import CamaraSensor from "./CamaraSensor";
+import "./Home.css"
+import Navbar from "./Navbar";
 
 const Home = () => {
   const [temp, setTemp] = useState([]);
@@ -54,15 +59,20 @@ const Home = () => {
   return (
     <Container>
       <div>
-          <Banner></Banner>
+        {/* <Navbar></Navbar> */}
+        <Banner></Banner>
         <div className="time">
           <div className="has-bg-img">
-              {/* <img class="bg-img w-25" src={weather} alt="..." /> */}
+            {/* <img class="bg-img w-25" src={weather} alt="..." /> */}
             <h1 className="text-center fw-bold">{currentDate}</h1>
             <h2 className="text-center">{currentTime}</h2>
           </div>
 
-          <p>Buzzer</p>
+          <div className="sensor container">
+            <BuzzerSensor></BuzzerSensor>
+            <TempretureSensor></TempretureSensor>
+            <CamaraSensor></CamaraSensor>
+          </div>
           <button onClick={handleToggle}>On/Off</button>
         </div>
       </div>
