@@ -3,6 +3,7 @@ import { db } from './firebase'
 import { set, ref, onValue, update } from "firebase/database"
 import { uid } from "uid"
 import { Container } from './styled'
+import Footer from './Footer';
 
 
 const Home = () => {
@@ -17,6 +18,8 @@ const Home = () => {
                     setTemp(prevState => [...prevState, value])
                 })
             }
+            console.log(data);
+
         })
     }, [])
 
@@ -46,6 +49,7 @@ const Home = () => {
                     <button onClick={handleToggle}>On/Off</button>
                 </div>
             </div>
+            <Footer></Footer>
         </Container>
     )
 }
