@@ -56,6 +56,14 @@ const Home = () => {
   const [inputCity, setInputCity] = useState("");
   const [data, setData] = useState({});
 
+  const [clockState, setClockState] = useState();
+  useEffect(() => {
+    setInterval(() => {
+      const date = new Date();
+      setClockState(date.toLocaleTimeString());
+    }, 1000);
+  }, []);
+
   return (
     <Container>
       <div>
