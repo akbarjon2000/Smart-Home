@@ -13,7 +13,8 @@ import BuzzerSensor from "./BuzzerSensor";
 import TempretureSensor from "./TempretureSensor";
 import CamaraSensor from "./CamaraSensor";
 import "./Home.css"
-import Navbar from "./Navbar";
+import Navigation from "./Navigation";
+import HeaderNavigation from "./HeaderNavigation";
 
 const Home = () => {
   const [temp, setTemp] = useState([]);
@@ -66,8 +67,9 @@ const Home = () => {
 
   return (
     <Container>
-      <div>
-        {/* <Navbar></Navbar> */}
+      <div className="navbar-top-sticky-container">
+        {/* <Navigation></Navigation> */}
+        <HeaderNavigation></HeaderNavigation>
         <Banner></Banner>
         <div className="time">
           <div className="has-bg-img">
