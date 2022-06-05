@@ -5,14 +5,16 @@ import { uid } from "uid";
 import { Container } from "./styled";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from 'date-fns';
+import { format } from "date-fns";
 import Footer from "./Footer";
+import weather from "../images/weather.JPG";
+import Banner from "./Banner";
 
 const Home = () => {
   const [temp, setTemp] = useState([]);
   const [toggle, setToggle] = useState(false);
 
-  const currentDate = new Date().toLocaleDateString('en-US');
+  const currentDate = new Date().toLocaleDateString("en-US");
   const currentTime = new Date().toLocaleTimeString("en-US");
 
   //FETCHING DATA:
@@ -45,12 +47,21 @@ const Home = () => {
 
   console.log(temp);
 
+  const apiKey = "f56f24967aaf51182d1d4df628297c6d";
+  const [inputCity, setInputCity] = useState("");
+  const [data, setData] = useState({});
+
   return (
     <Container>
       <div>
+          <Banner></Banner>
         <div className="time">
+          <div className="has-bg-img">
+              {/* <img class="bg-img w-25" src={weather} alt="..." /> */}
             <h1 className="text-center fw-bold">{currentDate}</h1>
             <h2 className="text-center">{currentTime}</h2>
+          </div>
+
           <p>Buzzer</p>
           <button onClick={handleToggle}>On/Off</button>
         </div>
