@@ -16,8 +16,8 @@ import "./Home.css";
 import Navigation from "./Navigation";
 import HeaderNavigation from "./HeaderNavigation";
 
-const Home = () => {
-  const [temp, setTemp] = useState([]);
+const RouterHome = () => {
+    const [temp, setTemp] = useState([]);
   const [toggle, setToggle] = useState(false);
 
   const currentDate = new Date().toLocaleDateString("en-US");
@@ -89,7 +89,7 @@ const Home = () => {
       </div>
       <Footer></Footer>
     </Container>
-  );
+    );
 };
 
-export default Home;
+export default RouterHome;

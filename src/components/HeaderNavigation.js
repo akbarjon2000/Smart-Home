@@ -14,7 +14,7 @@ const HeaderNavigation = () => {
           <a href="#news">Sensors</a>
         </li>
         <li>
-          <a href="#contact">Description</a>
+          <a href="#contact">Descreption</a>
         </li>
         <li>
           <a href="#about">Explainations</a>
