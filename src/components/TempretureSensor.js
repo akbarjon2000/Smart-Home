@@ -3,10 +3,10 @@ import { Card } from 'react-bootstrap';
 import buzzer from "../images/tempreture.jpg";
 
 const TempretureSensor = () => {
-    return (
-        <div className="container">
+  return (
+    <div className="container">
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" style={{width: "12rem", text: "center"}} src={buzzer} />
+        <Card.Img variant="top" style={{ width: "12rem", text: "center" }} src={buzzer} />
         <Card.Body>
           <Card.Title>Tempreture</Card.Title>
           <Card.Text>
@@ -14,11 +14,11 @@ const TempretureSensor = () => {
             bulk of the card's content.
           </Card.Text>
 
-          <input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger"></input>
+          {/* <input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger"></input> */}
         </Card.Body>
       </Card>
     </div>
-    );
+  );
 };
 
 export default TempretureSensor;
