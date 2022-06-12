@@ -3,6 +3,7 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import HeaderNavigation from "./components/HeaderNavigation";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import RequireAuth from "./components/RequireAuth";
 import Sensors from "./components/Sensors";
 import SignUp from "./components/SignUp";
 
@@ -14,7 +15,12 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/sensors" element={<Sensors />} />
+        {/* <Route path="/sensors" element={<Sensors />} /> */}
+        <Route path='/sensors' element={
+          <RequireAuth>
+            <Home></Home>
+          </RequireAuth>}>
+        </Route>
       </Routes>
     </div>
   );

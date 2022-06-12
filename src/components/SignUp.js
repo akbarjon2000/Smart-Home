@@ -5,6 +5,7 @@ import "./SignUp.css";
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Button, Form } from "react-bootstrap";
 import auth from "./firebase";
+import Loading from "./Loading";
 
 // import auth from "./firebase.init";
 
@@ -17,7 +18,7 @@ const SignUp = () => {
         navigate("/login");
     }
     if(loading || updating) {
-        return (<>Please Wait for little bit...</>)
+        return <Loading></Loading>
     }
     
     const handleRegister = async (event) => {
