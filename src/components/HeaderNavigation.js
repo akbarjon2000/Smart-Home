@@ -13,7 +13,7 @@ const HeaderNavigation = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#news">Sensors</a>
+        <Link to="/sensors">Sensors</Link>
         </li>
         <li>
           <a href="#contact">Descreption</a>
@@ -22,10 +22,7 @@ const HeaderNavigation = () => {
           <a href="#about">Explainations</a>
         </li>
         <li className="about-developer">
-          {/* <a class="active" href="#about"> */}
           <Link to="/login">Login</Link>
-            {/* Log In */}
-          {/* </a> */}
         </li>
         <li className="about-developer">
           <a class="active" href="#about">

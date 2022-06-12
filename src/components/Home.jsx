@@ -15,8 +15,11 @@ import CamaraSensor from "./CamaraSensor";
 import "./Home.css";
 import Navigation from "./Navigation";
 import HeaderNavigation from "./HeaderNavigation";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Login from "./Login";
+import FlameSensor from "./FlameSensor";
+import GreenLights from "./GreenLights";
+import Sensors from "./Sensors";
 
 const Home = () => {
   const [temp, setTemp] = useState([]);
@@ -68,11 +71,10 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    // <BrowserRouter>
       <Container>
         <div className="navbar-top-sticky-container">
           {/* <Navigation></Navigation> */}
-          <HeaderNavigation></HeaderNavigation>
           <Banner></Banner>
           <div className="time">
             <div className="has-bg-img">
@@ -83,9 +85,7 @@ const Home = () => {
 
             <h2 className="text-center mt-5">Sensors</h2>
             <div className="sensor container">
-              <BuzzerSensor></BuzzerSensor>
-              <TempretureSensor></TempretureSensor>
-              <CamaraSensor></CamaraSensor>
+              <Sensors></Sensors>
             </div>
             <button onClick={handleToggle}>On/Off</button>
           </div>
@@ -93,10 +93,7 @@ const Home = () => {
         <Footer></Footer>
 
       </Container>
-      {/* <Routes>
-        <Route path="/login" element={<Login></Login>}></Route>
-      </Routes> */}
-    </>
+    // </BrowserRouter>
   );
 };
 

@@ -1,14 +1,14 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import buzzer from "../images/buzzer.jpg";
+import greenLight from "../images/greenLight.jpg";
 
-const BuzzerSensor = () => {
-  return (
-    <div className="container rounded">
+const GreenLights = () => {
+    return (
+        <div className="container rounded">
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={buzzer} />
+        <Card.Img variant="top" src={greenLight} />
         <Card.Body>
-          <Card.Title>Lights</Card.Title>
+          <Card.Title>Green Lights</Card.Title>
           <Card.Text>
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
@@ -18,7 +18,7 @@ const BuzzerSensor = () => {
         </Card.Body>
       </Card>
     </div>
-  );
+    );
 };
 
-export default BuzzerSensor;
+export default GreenLights;
