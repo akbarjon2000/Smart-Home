@@ -1,16 +1,19 @@
 import { Navbar } from "react-bootstrap";
-import { Routes, Route, Link } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
+import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
+import HeaderNavigation from "./components/HeaderNavigation";
 import Home from "./components/Home";
+import Login from "./components/Login";
+import Sensors from "./components/Sensors";
 
 function App() {
   return (
     <div className="max-w-7xl mx-auto px-12">
-      <Navbar></Navbar>
+      <HeaderNavigation></HeaderNavigation>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sensors" element={<Sensors />} />
       </Routes>
-      <ToastContainer />
     </div>
   );
 }

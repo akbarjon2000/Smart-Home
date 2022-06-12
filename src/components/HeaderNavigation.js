@@ -13,7 +13,7 @@ const HeaderNavigation = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#news">Sensors</a>
+        <Link to="/sensors">Sensors</Link>
         </li>
         <li>
           <a href="#contact">Descreption</a>
