@@ -84,7 +84,7 @@ const Home = () => {
             </div>
 
             <h2 className="text-center mt-5">Sensors</h2>
-            <div className="sensor container">
+            <div>
               <Sensors></Sensors>
             </div>
             <button onClick={handleToggle}>On/Off</button>
