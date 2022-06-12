@@ -22,10 +22,7 @@ const HeaderNavigation = () => {
           <a href="#about">Explainations</a>
         </li>
         <li className="about-developer">
-          {/* <a class="active" href="#about"> */}
           <Link to="/login">Login</Link>
-            {/* Log In */}
-          {/* </a> */}
         </li>
         <li className="about-developer">
           <a class="active" href="#about">

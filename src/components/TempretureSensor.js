@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import buzzer from "../images/tempreture.jpg";
+import SwithButton from './SwithButton';
 
 const TempretureSensor = () => {
     return (
@@ -14,7 +15,7 @@ const TempretureSensor = () => {
             bulk of the card's content.
           </Card.Text>
 
-          <input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger"></input>
+          <SwithButton></SwithButton>
         </Card.Body>
       </Card>
     </div>
