@@ -1,9 +1,16 @@
 import React from "react";
-import { Navbar } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import {  Link } from 'react-router-dom';
+import auth from "./firebase";
 import "./HeaderNavigation.css";
+import { signOut } from "firebase/auth";
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 const HeaderNavigation = () => {
+  const [user] = useAuthState(auth);
+  const handleSignOut = event => {
+      signOut(auth);
+  }
   return (
     // <Navbar className="sticky-top w-100">
     <div className="navbar-top-sticky">
@@ -22,7 +29,13 @@ const HeaderNavigation = () => {
           <a href="#about">Explainations</a>
         </li>
         <li className="about-developer">
-          <Link to="/login">Login</Link>
+          {/* <Link to="/login">Login</Link> */}
+          {
+                user ? <button className="btn btn-link text-white text-decoration-none mt-2" onClick={handleSignOut}>Sign out</button>
+                :
+                <Nav.Link className="btn btn-link text-white text-decoration-none mt-2"  as={Link} to="/login">
+                Login
+              </Nav.Link>}
         </li>
         <li className="about-developer">
           <a class="active" href="#about">

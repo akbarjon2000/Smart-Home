@@ -4,7 +4,7 @@ import HeaderNavigation from "./components/HeaderNavigation";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Sensors from "./components/Sensors";
-import SignUp from "./SignUp";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
