@@ -75,7 +75,6 @@ const Home = () => {
       <Container>
         <div className="navbar-top-sticky-container">
           {/* <Navigation></Navigation> */}
-          <HeaderNavigation></HeaderNavigation>
           <Banner></Banner>
           <div className="time">
             <div className="has-bg-img">
