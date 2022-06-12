@@ -3,9 +3,11 @@ import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
 import HeaderNavigation from "./components/HeaderNavigation";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import PowerPointPresentation from "./components/PowerPointPresentation";
 import RequireAuth from "./components/RequireAuth";
 import Sensors from "./components/Sensors";
 import SignUp from "./components/SignUp";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -15,12 +17,14 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/presentation" element={<PowerPointPresentation />} />
         {/* <Route path="/sensors" element={<Sensors />} /> */}
         <Route path='/sensors' element={
           <RequireAuth>
             <Home></Home>
           </RequireAuth>}>
         </Route>
+        
       </Routes>
     </div>
   );

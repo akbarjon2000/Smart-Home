@@ -23,7 +23,7 @@ const HeaderNavigation = () => {
         <Link to="/sensors">Sensors</Link>
         </li>
         <li>
-          <a href="#contact">Descreption</a>
+        <Link to="/presentation">Presentation</Link>
         </li>
         <li>
           <a href="#about">Explainations</a>

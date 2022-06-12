@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import {
-  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
-  useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "./firebase";
 import Loading from "./Loading";
 
@@ -16,18 +14,12 @@ const Login = () => {
     signInWithEmailAndPassword,
     user,
     loading,
-    error,
   ] = useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-  let errorElement;
-  if (error) {
-    errorElement = <p className="text-danger">Error: {error?.message}</p>
-}
 
   const navigateRegister = event => {
       navigate("/signup")
   }
-  if(loading || sending) {
+  if(loading) {
     return <Loading></Loading>
   }
   if(user) {
