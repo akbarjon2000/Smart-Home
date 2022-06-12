@@ -1,34 +1,40 @@
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10px;
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  .about-developer{
-      float: right;
-  }
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #333;
+}
 
-  .navbar-top-sticky{
-      position: sticky;
-  }
-  
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    font-weight: bold;
-    border-radius: 5px;
-  }
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.about-developer {
+  float: right;
+}
+
+.navbar-top-sticky {
+  position: sticky;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.form {
+  height: 50px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}

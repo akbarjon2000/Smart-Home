@@ -14,7 +14,7 @@ const BuzzerSensor = () => {
             bulk of the card's content.
           </Card.Text>
 
-          <input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger"></input>
+          {/* <input type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger"></input> */}
         </Card.Body>
       </Card>
     </div>
