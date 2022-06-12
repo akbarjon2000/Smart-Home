@@ -15,6 +15,8 @@ import CamaraSensor from "./CamaraSensor";
 import "./Home.css";
 import Navigation from "./Navigation";
 import HeaderNavigation from "./HeaderNavigation";
+import { Route, Routes } from "react-router-dom";
+import Login from "./Login";
 
 const Home = () => {
   const [temp, setTemp] = useState([]);
@@ -32,7 +34,7 @@ const Home = () => {
           setTemp((prevState) => [...prevState, value]);
         });
       }
-      console.log(data);
+      // console.log(data);
     });
   }, []);
 
@@ -49,9 +51,9 @@ const Home = () => {
   }, [toggle]);
 
   const date = new Date().getMinutes();
-  console.log(date);
+  // console.log(date);
 
-  console.log(temp);
+  // console.log(temp);
 
   const apiKey = "f56f24967aaf51182d1d4df628297c6d";
   const [inputCity, setInputCity] = useState("");
@@ -66,29 +68,35 @@ const Home = () => {
   }, []);
 
   return (
-    <Container>
-      <div className="navbar-top-sticky-container">
-        {/* <Navigation></Navigation> */}
-        <HeaderNavigation></HeaderNavigation>
-        <Banner></Banner>
-        <div className="time">
-          <div className="has-bg-img">
-            {/* <img class="bg-img w-25" src={weather} alt="..." /> */}
-            <h1 className="text-center fw-bold">{currentDate}</h1>
-            <h2 className="text-center">{currentTime}</h2>
-          </div>
+    <>
+      <Container>
+        <div className="navbar-top-sticky-container">
+          {/* <Navigation></Navigation> */}
+          <HeaderNavigation></HeaderNavigation>
+          <Banner></Banner>
+          <div className="time">
+            <div className="has-bg-img">
+              {/* <img class="bg-img w-25" src={weather} alt="..." /> */}
+              <h1 className="text-center fw-bold">{currentDate}</h1>
+              <h2 className="text-center">{currentTime}</h2>
+            </div>
 
-          <h2 className="text-center mt-5">Sensors</h2>
-          <div className="sensor container">
-            <BuzzerSensor></BuzzerSensor>
-            <TempretureSensor></TempretureSensor>
-            <CamaraSensor></CamaraSensor>
+            <h2 className="text-center mt-5">Sensors</h2>
+            <div className="sensor container">
+              <BuzzerSensor></BuzzerSensor>
+              <TempretureSensor></TempretureSensor>
+              <CamaraSensor></CamaraSensor>
+            </div>
+            <button onClick={handleToggle}>On/Off</button>
           </div>
-          <button onClick={handleToggle}>On/Off</button>
         </div>
-      </div>
-      <Footer></Footer>
-    </Container>
+        <Footer></Footer>
+
+      </Container>
+      {/* <Routes>
+        <Route path="/login" element={<Login></Login>}></Route>
+      </Routes> */}
+    </>
   );
 };
 

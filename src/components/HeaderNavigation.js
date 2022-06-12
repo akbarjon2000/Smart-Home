@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar } from "react-bootstrap";
+import {  Link } from 'react-router-dom';
 import "./HeaderNavigation.css";
 
 const HeaderNavigation = () => {
@@ -8,7 +9,8 @@ const HeaderNavigation = () => {
     <div className="navbar-top-sticky">
       <ul>
         <li>
-          <a href="#home">Home</a>
+          {/* <a href="#home">Home</a> */}
+          <Link to="/">Home</Link>
         </li>
         <li>
           <a href="#news">Sensors</a>
@@ -20,9 +22,10 @@ const HeaderNavigation = () => {
           <a href="#about">Explainations</a>
         </li>
         <li className="about-developer">
-          <a class="active" href="#about">
-            Log In
-          </a>
+          {/* <a class="active" href="#about"> */}
+          <Link to="/login">Login</Link>
+            {/* Log In */}
+          {/* </a> */}
         </li>
         <li className="about-developer">
           <a class="active" href="#about">
