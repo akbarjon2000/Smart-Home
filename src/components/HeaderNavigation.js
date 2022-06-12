@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Navbar } from "react-bootstrap";
+import {  Link } from 'react-router-dom';
 import "./HeaderNavigation.css";
 import Voice from "./VoiceRecognition/Voice";
 
@@ -16,10 +17,11 @@ const HeaderNavigation = () => {
     <div className="navbar-top-sticky">
       <ul>
         <li>
-          <a href="#home">Home</a>
+          {/* <a href="#home">Home</a> */}
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="#news">Sensors</a>
+        <Link to="/sensors">Sensors</Link>
         </li>
         <li>
           <a href="#contact">Descreption</a>
@@ -31,9 +33,7 @@ const HeaderNavigation = () => {
           <Voice />
         </li>
         <li className="about-developer">
-          <a className="active" href="#about">
-            Log In
-          </a>
+
         </li>
         <li className="about-developer">
           <a className="active" href="#about">
