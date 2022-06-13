@@ -22,7 +22,7 @@ li a {
 }
 
 .navbar-top-sticky {
-  position: sticky;
+  position: relative;
 }
 
 /* Change the link color to #111 (black) on hover */

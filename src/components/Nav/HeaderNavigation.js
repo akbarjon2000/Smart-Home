@@ -1,8 +1,8 @@
 import React, { useRef } from "react";
 import { Navbar } from "react-bootstrap";
-import {  Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./HeaderNavigation.css";
-import Voice from "./VoiceRecognition/Voice";
+import Voice from "../VoiceRecognition/Voice";
 
 
 
@@ -21,7 +21,7 @@ const HeaderNavigation = () => {
           <Link to="/">Home</Link>
         </li>
         <li>
-        <Link to="/sensors">Sensors</Link>
+          <Link to="/sensors">Sensors</Link>
         </li>
         <li>
           <a href="#contact">Descreption</a>
@@ -40,9 +40,6 @@ const HeaderNavigation = () => {
             About developers
           </a>
         </li>
-        <form ref={searchForm} action="https://www.google.com/search" method="get" target="_blank" id="search-form" className="about-developer form">
-          <input ref={searchFormInput} name="q" type="text" placeholder="검색어를 입력하세요..." autoComplete="off" autoFocus id="Input" />
-        </form>
       </ul>
     </div>
     // </Navbar>

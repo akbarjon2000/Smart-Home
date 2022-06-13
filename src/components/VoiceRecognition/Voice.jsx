@@ -1,11 +1,14 @@
 import React, { useRef, createRef, useState } from 'react'
 import { BsFillMicFill, BsFillMicMuteFill } from 'react-icons/bs'
+import { Container } from './style';
+import { set, ref, onValue, update } from "firebase/database";
+import { db } from '../firebase';
 
 const Voice = () => {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition; // if none exists -> undefined
     // console.log(SpeechRecognition)
     const [search, setSearch] = useState(true)
-
+    const audio = useRef()
 
 
     const searchForm = useRef()
@@ -65,6 +68,14 @@ const Voice = () => {
                 }
                 else if (transcript.toLowerCase().trim() === "reset input.") {
                     searchFormInput.current.value = "";
+                } else if (transcript.toLowerCase().trim() === "turn on the light.") {
+                    update(ref(db, 'Sensors'), { LED: 1 })
+                } else if (transcript.toLowerCase().trim() === "turn off the light.") {
+                    update(ref(db, 'Sensors'), { LED: 0 })
+                } else if (transcript.toLowerCase().trim() === "turn off the alarm.") {
+                    update(ref(db, 'Sensors'), { fire: 0 })
+                } else if (transcript.toLowerCase().trim() === "say goodbye.") {
+                    audio.current.play()
                 }
                 else {
                     searchFormInput.current.value = transcript;
@@ -87,6 +98,7 @@ const Voice = () => {
 
     function micBtnClick(e) {
         e.preventDefault()
+
         if (search) { // Start Voice Recognition
             recognition.start(); // First time you have to allow access to mic!
             setSearch(false)
@@ -98,11 +110,14 @@ const Voice = () => {
     }
 
     return (
-        <form ref={searchForm} method="get" target="_blank" id="search-form" className="about-developer form">
-            <input ref={searchFormInput} name="q" type="text" placeholder="Control your home" autoComplete="off" autoFocus id="Input" >
-            </input>
-            <button onClick={micBtnClick} >{search ? <BsFillMicFill /> : <BsFillMicMuteFill />}</button>
-        </form>
+        <Container>
+            <form ref={searchForm} method="get" target="_blank" id="search-form" className="about-developer form">
+                <input ref={searchFormInput} name="q" type="text" placeholder="Control your home" autoComplete="off" autoFocus id="Input" >
+                </input>
+                <button onClick={micBtnClick} >{search ? <BsFillMicFill className='icon' /> : <BsFillMicMuteFill className='icon' />}</button>
+                <audio src='./good_bye.mp3' ref={audio} />
+            </form>
+        </Container>
     )
 }
 

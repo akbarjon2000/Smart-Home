@@ -1,9 +1,9 @@
 import { Navbar } from "react-bootstrap";
 import { Routes, Route, Link, BrowserRouter } from "react-router-dom";
-import HeaderNavigation from "./components/HeaderNavigation";
-import Home from "./components/Home";
+import HeaderNavigation from "./components/Nav/HeaderNavigation";
+import Home from "./components/Home/Home";
 import Login from "./components/Login";
-import Sensors from "./components/Sensors";
+import Sensors from "./components/Sensors/Sensors";
 import SignUp from "./SignUp";
 
 function App() {
